@@ -1,2 +1,2 @@
-# DarkMode
-quiero crear una herramienta para que todas las paginas se pongan en modo oscuro(hasta las que no tienen este dicho modo)
+#BrineLab
+Este repositorio es un laboratorio de pruebas y un historial de mis pasos por la programacion, la ciberceguridad y demas cosas de la computacion.
