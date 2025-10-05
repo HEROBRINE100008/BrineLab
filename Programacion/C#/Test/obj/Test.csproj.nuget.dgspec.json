@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/workspaces/DarkMode/Programacion/C#/Hello_World/Hello_World.csproj": {}
+    "/workspaces/DarkMode/Programacion/C#/Test/Test.csproj": {}
   },
   "projects": {
-    "/workspaces/DarkMode/Programacion/C#/Hello_World/Hello_World.csproj": {
+    "/workspaces/DarkMode/Programacion/C#/Test/Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/DarkMode/Programacion/C#/Hello_World/Hello_World.csproj",
-        "projectName": "Hello_World",
-        "projectPath": "/workspaces/DarkMode/Programacion/C#/Hello_World/Hello_World.csproj",
+        "projectUniqueName": "/workspaces/DarkMode/Programacion/C#/Test/Test.csproj",
+        "projectName": "Test",
+        "projectPath": "/workspaces/DarkMode/Programacion/C#/Test/Test.csproj",
         "packagesPath": "/home/codespace/.nuget/packages/",
-        "outputPath": "/workspaces/DarkMode/Programacion/C#/Hello_World/obj/",
+        "outputPath": "/workspaces/DarkMode/Programacion/C#/Test/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/codespace/.nuget/NuGet/NuGet.Config"
