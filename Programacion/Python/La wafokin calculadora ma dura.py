@@ -1,0 +1,3 @@
+Valor1= int(input("DAME EL MADITAZO PRIMER NUMERO: "))
+Valor2= int(input("DAME EL MADITAZO SEGUNDO NUMERO: "))
+print("TU MALDITAZO REESULTADO VELO AHI: ", Valor1+Valor2)
