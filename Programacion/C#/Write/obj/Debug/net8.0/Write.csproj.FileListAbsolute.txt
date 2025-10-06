@@ -1,0 +1,5 @@
+/workspaces/DarkMode/Programacion/C#/Write/obj/Debug/net8.0/Write.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/DarkMode/Programacion/C#/Write/obj/Debug/net8.0/Write.AssemblyInfoInputs.cache
+/workspaces/DarkMode/Programacion/C#/Write/obj/Debug/net8.0/Write.AssemblyInfo.cs
+/workspaces/DarkMode/Programacion/C#/Write/obj/Debug/net8.0/Write.csproj.CoreCompileInputs.cache
+/workspaces/DarkMode/Programacion/C#/Write/obj/Debug/net8.0/Write.sourcelink.json
