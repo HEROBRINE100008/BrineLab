@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/workspaces/DarkMode/Programacion/C#/Write/Write.csproj": {}
+    "/workspaces/BrineLab/Programacion/C#/Write/Write.csproj": {}
   },
   "projects": {
-    "/workspaces/DarkMode/Programacion/C#/Write/Write.csproj": {
+    "/workspaces/BrineLab/Programacion/C#/Write/Write.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/DarkMode/Programacion/C#/Write/Write.csproj",
+        "projectUniqueName": "/workspaces/BrineLab/Programacion/C#/Write/Write.csproj",
         "projectName": "Write",
-        "projectPath": "/workspaces/DarkMode/Programacion/C#/Write/Write.csproj",
+        "projectPath": "/workspaces/BrineLab/Programacion/C#/Write/Write.csproj",
         "packagesPath": "/home/codespace/.nuget/packages/",
-        "outputPath": "/workspaces/DarkMode/Programacion/C#/Write/obj/",
+        "outputPath": "/workspaces/BrineLab/Programacion/C#/Write/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/codespace/.nuget/NuGet/NuGet.Config"
