@@ -1,0 +1,15 @@
+/workspaces/DarkMode/Programacion/C#/Test/obj/Debug/net8.0/Test.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/DarkMode/Programacion/C#/Test/obj/Debug/net8.0/Test.AssemblyInfoInputs.cache
+/workspaces/DarkMode/Programacion/C#/Test/obj/Debug/net8.0/Test.AssemblyInfo.cs
+/workspaces/DarkMode/Programacion/C#/Test/obj/Debug/net8.0/Test.csproj.CoreCompileInputs.cache
+/workspaces/DarkMode/Programacion/C#/Test/obj/Debug/net8.0/Test.sourcelink.json
+/workspaces/DarkMode/Programacion/C#/Test/bin/Debug/net8.0/Test
+/workspaces/DarkMode/Programacion/C#/Test/bin/Debug/net8.0/Test.deps.json
+/workspaces/DarkMode/Programacion/C#/Test/bin/Debug/net8.0/Test.runtimeconfig.json
+/workspaces/DarkMode/Programacion/C#/Test/bin/Debug/net8.0/Test.dll
+/workspaces/DarkMode/Programacion/C#/Test/bin/Debug/net8.0/Test.pdb
+/workspaces/DarkMode/Programacion/C#/Test/obj/Debug/net8.0/Test.dll
+/workspaces/DarkMode/Programacion/C#/Test/obj/Debug/net8.0/refint/Test.dll
+/workspaces/DarkMode/Programacion/C#/Test/obj/Debug/net8.0/Test.pdb
+/workspaces/DarkMode/Programacion/C#/Test/obj/Debug/net8.0/Test.genruntimeconfig.cache
+/workspaces/DarkMode/Programacion/C#/Test/obj/Debug/net8.0/ref/Test.dll
