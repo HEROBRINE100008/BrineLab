@@ -1,0 +1,15 @@
+/workspaces/BrineLab/Programacion/C#/3_comments/bin/Debug/net8.0/3_comments
+/workspaces/BrineLab/Programacion/C#/3_comments/bin/Debug/net8.0/3_comments.deps.json
+/workspaces/BrineLab/Programacion/C#/3_comments/bin/Debug/net8.0/3_comments.runtimeconfig.json
+/workspaces/BrineLab/Programacion/C#/3_comments/bin/Debug/net8.0/3_comments.dll
+/workspaces/BrineLab/Programacion/C#/3_comments/bin/Debug/net8.0/3_comments.pdb
+/workspaces/BrineLab/Programacion/C#/3_comments/obj/Debug/net8.0/3_comments.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/BrineLab/Programacion/C#/3_comments/obj/Debug/net8.0/3_comments.AssemblyInfoInputs.cache
+/workspaces/BrineLab/Programacion/C#/3_comments/obj/Debug/net8.0/3_comments.AssemblyInfo.cs
+/workspaces/BrineLab/Programacion/C#/3_comments/obj/Debug/net8.0/3_comments.csproj.CoreCompileInputs.cache
+/workspaces/BrineLab/Programacion/C#/3_comments/obj/Debug/net8.0/3_comments.sourcelink.json
+/workspaces/BrineLab/Programacion/C#/3_comments/obj/Debug/net8.0/3_comments.dll
+/workspaces/BrineLab/Programacion/C#/3_comments/obj/Debug/net8.0/refint/3_comments.dll
+/workspaces/BrineLab/Programacion/C#/3_comments/obj/Debug/net8.0/3_comments.pdb
+/workspaces/BrineLab/Programacion/C#/3_comments/obj/Debug/net8.0/3_comments.genruntimeconfig.cache
+/workspaces/BrineLab/Programacion/C#/3_comments/obj/Debug/net8.0/ref/3_comments.dll
