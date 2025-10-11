@@ -3,8 +3,6 @@
 - Su enfoque no es solo académico, sino que incluye **desarrollo humano, físico y emocional**.
 - Ofrece diversos **programas y servicios** para fortalecer la experiencia universitaria y garantizar un entorno favorable para el aprendizaje.
 
----
-
 #### **2. Bienestar Estudiantil**
 - **Definición**: Conjunto de instancias administrativas y académicas que brindan apoyo continuo a los estudiantes.
 - **Objetivo**: Actuar como puente entre el estudiante y los recursos necesarios para su éxito académico y personal.
@@ -14,8 +12,6 @@
   - **Apoyo Tutorial**: Asesorías gratuitas para reforzar asignaturas.
   - **Deportes**: Promueve salud física y valores como trabajo en equipo y disciplina.
 
----
-
 #### **3. Admisiones**
 - **Proceso transparente y equitativo**.
 - **Requisitos clave**:
@@ -24,8 +20,6 @@
   - Certificado médico.
   - Fotografías, cédula, acta de nacimiento.
 - **Evaluación**: Prueba POMA (mínimo 400 puntos). Quienes no la aprueben pueden tomar cursos de nivelación.
-
----
 
 #### **4. Estructura Administrativa**
 - **Rectoría**: Máxima autoridad (actualmente Dr. José Alejandro Aybar Martín).
@@ -38,8 +32,6 @@
   - Transformación Digital
 - **Funciones**: Gestión académica, financiera, desarrollo institucional, innovación tecnológica.
 
----
-
 #### **5. Becas**
 - **Tipos**:
   - Académicas (mérito)
@@ -47,8 +39,6 @@
   - Por necesidad económica
   - De excelencia (liderazgo)
 - **Objetivo**: Promover acceso equitativo a la educación superior.
-
----
 
 #### **6. Servicios de Apoyo**
 - **Biblioteca José Andrés Aybar Castellanos**:
