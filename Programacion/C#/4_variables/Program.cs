@@ -17,4 +17,4 @@ int miNum2;
 miNum2 = 16;
 Console.WriteLine(miNum2);
 // Cambiar valor de la variable
-int mi
+int miNum2
