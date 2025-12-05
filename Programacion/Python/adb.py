@@ -23,7 +23,11 @@ def obtener_info_dispositivo():
         "Nivel de Batería": ejecutar_comando("adb shell dumpsys battery | grep level")
     }
     return info
-
+def consola_dispositivo():
+    """Comando de shell para conectarse"""
+    print("Entrando en la shell...")
+    ejecutar_comando("adb shell")
+    
 def main():
     print("=== Script de Control ADB ===")
     
@@ -46,6 +50,8 @@ def main():
     info = obtener_info_dispositivo()
     for clave, valor in info.items():
         print(f"{clave}: {valor}")
-
+    
+   # Conectarse como shell al dispositivo
+   consola = consola_dispositivo()
 if __name__ == "__main__":
     main()
