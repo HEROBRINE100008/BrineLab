@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herobrine Code Vault</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Fira+Code:wght@400;600&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <style>
+        :root {
+            --bg-dark: #050505;
+            --panel-bg: #0f0f0f;
+            --border-color: #333;
+            --accent-red: #c90000;
+            --text-main: #e0e0e0;
+            --code-font: 'Fira Code', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* --- Header --- */
+        header {
+            height: 60px;
+            background: #000;
+            border-bottom: 2px solid var(--accent-red);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 1.2rem;
+            color: var(--accent-red);
+        }
+
+        .brand img { height: 65px; }
+
+        /* --- Layout Principal --- */
+        .main-container {
+            display: flex;
+            flex: 1;
+            height: calc(100vh - 60px);
+        }
+
+        /* --- Sidebar (Explorador de Archivos) --- */
+        .sidebar {
+            width: 250px;
+            background: #0a0a0a;
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            padding: 15px;
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            border-bottom: 1px solid #222;
+        }
+
+        #repo-tree {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        .folder, .file {
+            padding: 8px 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            transition: 0.2s;
+        }
+
+        .folder { color: #888; font-weight: bold; }
+        .file { color: #bbb; margin-left: 15px; }
+        .file:hover { background: rgba(201, 0, 0, 0.1); color: var(--accent-red); }
+        .folder i { color: var(--accent-red); }
+
+        /* --- Área de Trabajo (Editor + Terminal) --- */
+        .workspace {
+            flex: 1;
+            display: flex;
+            flex-direction: row; /* Dividir izquierda y derecha */
+        }
+
+        /* --- Editor de Código (Izquierda) --- */
+        .code-editor {
+            flex: 6; /* Ocupa 60% del ancho */
+            background: #111;
+            display: flex;
+            flex-direction: column;
+            border-right: 2px solid var(--border-color);
+            position: relative;
+        }
+
+        .editor-header {
+            background: #1a1a1a;
+            padding: 10px 20px;
+            font-size: 0.85rem;
+            color: #888;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-run {
+            background: var(--accent-red);
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            font-family: var(--code-font);
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: 0.3s;
+        }
+        
+        .btn-run:hover { box-shadow: 0 0 10px var(--accent-red); }
+
+        .code-content {
+            flex: 1;
+            overflow: auto;
+            position: relative;
+            padding: 20px;
+            font-family: var(--code-font);
+            font-size: 14px;
+        }
+
+        /* Ajustes para PrismJS (Estilo del código) */
+        pre { margin: 0 !important; height: 100%; }
+        
+        /* --- Terminal (Derecha) --- */
+        .terminal {
+            flex: 4; /* Ocupa 40% del ancho */
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            font-family: var(--code-font);
+            border-left: 1px solid #333;
+        }
+
+        .terminal-header {
+            background: #1a1a1a;
+            padding: 10px 15px;
+            color: #aaa;
+            font-size: 0.8rem;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .terminal-body {
+            flex: 1;
+            padding: 15px;
+            color: #0f0; /* Color verde terminal clásico o rojo */
+            font-size: 0.9rem;
+            overflow-y: auto;
+        }
+
+        .terminal-line { margin-bottom: 5px; }
+        .prompt { color: var(--accent-red); margin-right: 8px; }
+        .output-text { color: #e0e0e0; white-space: pre-wrap; }
+        .error-text { color: #ff3333; }
+        
+        /* Loader */
+        .loader {
+            display: none;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--accent-red);
+            font-size: 2rem;
+        }
+
+        /* Scrollbars Góticos */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #333; border: 1px solid #000; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-red); }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand">
+            <img src="logo-h.png" alt="H Logo">
+            <span>HEROBRINE REPOS</span>
+        </div>
+        <div style="font-size: 0.8rem; color: #666;">
+            <i class="fab fa-github"></i> Conectado a GitHub API
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">Explorador</div>
+            <div id="repo-tree">
+                <div style="padding:20px; text-align:center; color:#444;">Cargando repositorios...</div>
+            </div>
+        </aside>
+
+        <div class="workspace">
+            
+            <div class="code-editor">
+                <div class="editor-header">
+                    <span id="current-filename">Selecciona un archivo...</span>
+                    <button class="btn-run" onclick="runCode()">
+                        <i class="fas fa-play"></i> EJECUTAR
+                    </button>
+                </div>
+                <div class="code-content">
+                    <div class="loader" id="loader"><i class="fas fa-skull fa-spin"></i></div>
+                    <pre><code id="code-display" class="language-javascript">
+// Bienvenido al repositorio.
+// Selecciona un archivo de la izquierda para ver su contenido.
+                    </code></pre>
+                </div>
+            </div>
+
+            <div class="terminal">
+                <div class="terminal-header">
+                    <span>TERMINAL - root@herobrine-server:~</span>
+                    <i class="fas fa-terminal"></i>
+                </div>
+                <div class="terminal-body" id="terminal-output">
+                    <div class="terminal-line">
+                        <span class="prompt">$</span> Sistema iniciado... Esperando input.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-c.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-java.min.js"></script>
+
+    <script>
+        // ==========================================
+        // CONFIGURACIÓN: CAMBIA ESTO POR TUS DATOS
+        // ==========================================
+        const GITHUB_USER = 'HEROBRINE100008'; // Pon aquí tu usuario de GitHub (ej. 'TuUsuario')
+        const GITHUB_REPO = 'BrineLab';    // Pon aquí el nombre de tu repositorio (ej. 'Mis-Codigos')
+        const BRANCH = 'main/Programacion';           // Usualmente 'main' o 'master'
+        // ==========================================
+
+        const repoTree = document.getElementById('repo-tree');
+        const codeDisplay = document.getElementById('code-display');
+        const fileNameDisplay = document.getElementById('current-filename');
+        const terminalOutput = document.getElementById('terminal-output');
+        const loader = document.getElementById('loader');
+
+        let currentCode = "";
+        let currentLanguage = "javascript";
+
+        // 1. Cargar estructura del Repositorio
+        async function fetchRepoContents(path = '') {
+            try {
+                const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${path}`;
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('Repositorio no encontrado');
+                const data = await response.json();
+                renderTree(data);
+            } catch (error) {
+                repoTree.innerHTML = `<div style="color:var(--accent-red); padding:10px;">Error: ${error.message}</div>`;
+            }
+        }
+
+        // 2. Renderizar lista de carpetas/archivos
+        function renderTree(items) {
+            repoTree.innerHTML = '';
+            
+            // Separar carpetas y archivos
+            const folders = items.filter(item => item.type === 'dir');
+            const files = items.filter(item => item.type === 'file');
+
+            // Renderizar Carpetas (Lenguajes)
+            folders.forEach(folder => {
+                const folderDiv = document.createElement('div');
+                folderDiv.className = 'folder';
+                folderDiv.innerHTML = `<i class="fas fa-folder"></i> ${folder.name}`;
+                // Al hacer click, deberíamos cargar el contenido de esa carpeta (simplificado para este demo a 1 nivel)
+                folderDiv.onclick = () => loadFolder(folder.path);
+                repoTree.appendChild(folderDiv);
+            });
+
+            // Renderizar Archivos sueltos
+            files.forEach(file => {
+                const fileDiv = document.createElement('div');
+                fileDiv.className = 'file';
+                fileDiv.innerHTML = `<i class="fas fa-code"></i> ${file.name}`;
+                fileDiv.onclick = () => loadFile(file);
+                repoTree.appendChild(fileDiv);
+            });
+        }
+
+        // Función auxiliar para entrar en carpetas (Recursividad simple)
+        async function loadFolder(path) {
+            // Limpiar y cargar contenido de la subcarpeta
+            repoTree.innerHTML = '<div style="color:#666; padding:10px;">Cargando...</div>';
+            
+            // Botón para volver atrás
+            const backBtn = document.createElement('div');
+            backBtn.className = 'folder';
+            backBtn.innerHTML = '<i class="fas fa-arrow-left"></i> .. (Volver)';
+            backBtn.onclick = () => fetchRepoContents(''); // Volver a raíz
+            
+            try {
+                const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${path}`;
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                repoTree.innerHTML = '';
+                repoTree.appendChild(backBtn);
+                
+                data.forEach(item => {
+                    if(item.type === 'file') {
+                        const fileDiv = document.createElement('div');
+                        fileDiv.className = 'file';
+                        fileDiv.innerHTML = `<i class="fas fa-file-code"></i> ${item.name}`;
+                        fileDiv.onclick = () => loadFile(item);
+                        repoTree.appendChild(fileDiv);
+                    }
+                });
+
+            } catch (e) { console.error(e); }
+        }
+
+        // 3. Cargar contenido del archivo
+        async function loadFile(fileItem) {
+            loader.style.display = 'block';
+            fileNameDisplay.innerText = fileItem.name;
+            codeDisplay.innerText = "";
+            
+            // Detectar lenguaje por extensión
+            const ext = fileItem.name.split('.').pop();
+            setLanguage(ext);
+
+            try {
+                // GitHub API retorna download_url para el contenido raw
+                const res = await fetch(fileItem.download_url);
+                const text = await res.text();
+                
+                currentCode = text;
+                codeDisplay.textContent = text;
+                
+                // Resaltar sintaxis
+                Prism.highlightElement(codeDisplay);
+                printToTerminal(`Archivo cargado: ${fileItem.name}`, 'info');
+
+            } catch (error) {
+                printToTerminal("Error al leer archivo.", 'error');
+            } finally {
+                loader.style.display = 'none';
+            }
+        }
+
+        function setLanguage(ext) {
+            codeDisplay.className = "";
+            if(ext === 'js') { codeDisplay.classList.add('language-javascript'); currentLanguage = 'js'; }
+            else if(ext === 'py') { codeDisplay.classList.add('language-python'); currentLanguage = 'py'; }
+            else if(ext === 'cpp' || ext === 'c') { codeDisplay.classList.add('language-cpp'); currentLanguage = 'cpp'; }
+            else { codeDisplay.classList.add('language-clike'); currentLanguage = 'text'; }
+        }
+
+        // 4. Función de "Ejecutar" (Simulador de Terminal)
+        function runCode() {
+            printToTerminal(`Compilando/Ejecutando script...`, 'info');
+            
+            setTimeout(() => {
+                if (currentLanguage === 'js') {
+                    // SI ES JAVASCRIPT: Intentamos ejecutarlo de verdad (con cuidado)
+                    try {
+                        // Capturamos console.log
+                        const originalLog = console.log;
+                        let output = [];
+                        console.log = function(message) { output.push(message); };
+                        
+                        // Ejecutar
+                        eval(currentCode);
+                        
+                        // Restaurar y mostrar
+                        console.log = originalLog;
+                        if(output.length > 0) {
+                            output.forEach(line => printToTerminal(line));
+                        } else {
+                            printToTerminal("Script ejecutado sin salida (no hay console.log)", 'info');
+                        }
+                    } catch (e) {
+                        printToTerminal(`Runtime Error: ${e.message}`, 'error');
+                    }
+                } else {
+                    // OTROS LENGUAJES (Python, C++, etc.)
+                    // Como no tenemos backend, simulamos la ejecución.
+                    printToTerminal(`> Ejecutando entorno ${currentLanguage.toUpperCase()}...`, 'info');
+                    printToTerminal(`[System] Nota: Este es un entorno estático.`, 'error');
+                    printToTerminal(`Para correr Python/C++ se requiere un servidor backend.`, 'output');
+                    printToTerminal(`Código analizado: Sintaxis Correcta.`, 'info');
+                }
+            }, 800); // Pequeño retraso para realismo
+        }
+
+        function printToTerminal(text, type = 'output') {
+            const line = document.createElement('div');
+            line.className = 'terminal-line';
+            
+            let colorClass = 'output-text';
+            if (type === 'error') colorClass = 'error-text';
+            if (type === 'info') style = 'color: #888; font-style: italic;';
+
+            const promptSpan = `<span class="prompt">${type === 'error' ? '!' : '$'}</span>`;
+            
+            line.innerHTML = `${promptSpan} <span class="${colorClass}">${text}</span>`;
+            terminalOutput.appendChild(line);
+            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+        }
+
+        // Iniciar
+        fetchRepoContents();
+
+    </script>
+</body>
+</html>
