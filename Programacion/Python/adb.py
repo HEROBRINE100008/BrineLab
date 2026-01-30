@@ -52,6 +52,6 @@ def main():
         print(f"{clave}: {valor}")
     
    # Conectarse como shell al dispositivo
-   consola = consola_dispositivo()
+    consola = consola_dispositivo()
 if __name__ == "__main__":
     main()
