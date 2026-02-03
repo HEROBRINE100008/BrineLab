@@ -39,8 +39,6 @@ header {
     padding: 0 20px;
 }
 
-header span { color: var(--accent); font-weight: bold; }
-
 /* LAYOUT */
 .main {
     flex: 1;
@@ -136,7 +134,7 @@ pre {
 <body>
 
 <header>
-    <span>HEROBRINE CODE VAULT</span>
+    <span style="color:#c90000;font-weight:bold;">HEROBRINE CODE VAULT</span>
     <i class="fab fa-github"></i>
 </header>
 
@@ -149,7 +147,7 @@ pre {
                 <span id="filename">Selecciona un archivo</span>
                 <button onclick="runCode()">▶ RUN</button>
             </div>
-            <pre><code id="code" class="language-javascript">// Esperando archivo…</code></pre>
+            <pre><code id="code" class="language-none">// Esperando archivo…</code></pre>
         </div>
 
         <div class="terminal">
@@ -162,9 +160,15 @@ pre {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 
 <script>
+/* ================= CONFIG ================= */
 const GITHUB_USER = 'HEROBRINE100008';
 const GITHUB_REPO = 'BrineLab';
 const BRANCH = 'main';
+
+/* EXTENSIONES BINARIAS */
+const BINARY_EXTENSIONS = ['db','sqlite','sqlite3','exe','bin','dll'];
+
+/* ========================================= */
 
 const tree = document.getElementById('tree');
 const codeEl = document.getElementById('code');
@@ -173,13 +177,14 @@ const terminal = document.getElementById('terminal');
 const input = document.getElementById('cmd');
 
 let currentCode = '';
-let currentLang = 'js';
+let currentLang = '';
 
 function log(text) {
     terminal.innerHTML += text + '<br>';
     terminal.scrollTop = terminal.scrollHeight;
 }
 
+/* CARGAR REPO */
 async function load(path = '') {
     const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${path}?ref=${BRANCH}`;
     const res = await fetch(url);
@@ -195,28 +200,51 @@ async function load(path = '') {
     });
 }
 
+/* ABRIR ARCHIVO */
 async function openFile(file) {
-    const res = await fetch(file.download_url);
-    currentCode = await res.text();
+    const ext = file.name.split('.').pop().toLowerCase();
     filenameEl.textContent = file.name;
 
-    const ext = file.name.split('.').pop();
+    /* 🚫 BINARIO */
+    if (BINARY_EXTENSIONS.includes(ext)) {
+        codeEl.className = 'language-none';
+        codeEl.textContent =
+`⚠ ARCHIVO BINARIO DETECTADO
+
+Este archivo es una base de datos SQLite u otro binario.
+No puede mostrarse como texto.
+
+✔ Archivo: ${file.name}
+✔ Tipo: BINARIO
+✔ Solución:
+  - Descárgalo
+  - Ábrelo con DB Browser for SQLite
+  - Úsalo desde Python (sqlite3)`;
+
+        Prism.highlightElement(codeEl);
+        log('Archivo binario bloqueado: ' + file.name);
+        return;
+    }
+
+    /* TEXTO */
+    const res = await fetch(file.download_url);
+    currentCode = await res.text();
     currentLang = ext;
-    codeEl.className = 'language-javascript';
+
+    codeEl.className = ext === 'py' ? 'language-python' : 'language-javascript';
     codeEl.textContent = currentCode;
     Prism.highlightElement(codeEl);
 
-    log(`Archivo cargado: ${file.name}`);
+    log('Archivo cargado: ' + file.name);
 }
 
+/* EJECUTAR */
 function runCode() {
-    if (currentLang === 'js') {
-        sandboxJS(currentCode);
-    } else {
-        log(`Simulación de ${currentLang.toUpperCase()} (requiere backend)`);
-    }
+    if (currentLang === 'js') sandboxJS(currentCode);
+    else log('Simulación: ' + currentLang.toUpperCase() + ' (requiere backend)');
 }
 
+/* SANDBOX JS */
 function sandboxJS(code) {
     const iframe = document.createElement('iframe');
     iframe.style.display = 'none';
@@ -234,6 +262,7 @@ function sandboxJS(code) {
     }
 }
 
+/* TERMINAL INPUT */
 input.addEventListener('keydown', e => {
     if (e.key === 'Enter') {
         const cmd = input.value;
@@ -244,7 +273,7 @@ input.addEventListener('keydown', e => {
         else if (cmd === 'run') runCode();
         else if (cmd === 'clear') terminal.innerHTML = '';
         else if (cmd === 'ls') log(filenameEl.textContent || 'sin archivo');
-        else log('Comando desconocido');
+        else log('Comando no reconocido');
     }
 });
 
