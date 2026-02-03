@@ -4,7 +4,6 @@ from django.shortcuts import get_object_or_404, render
 # Create your views here.
 def index(request):
     return render(request, 'index.html')
-
 def hello(request, username):
     return HttpResponse("<h2>Hello %s<h2/>" % username )
 

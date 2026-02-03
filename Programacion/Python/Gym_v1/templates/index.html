@@ -83,6 +83,12 @@
             font-size: 17px;
             font-weight: bold;
             cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #0a2540;
+            color: #fff;
         }
 
         table {
@@ -132,14 +138,13 @@
 
 <div class="container">
 
-    <!-- FORMULARIO -->
     <div class="form-card">
         <h2>Registrar Cliente</h2>
 
         <form method="POST" action="/registrar">
             <div class="form-group">
-                <input type="text" name="name" placeholder="Nombre" required>
-                <input type="tel" name="phone" placeholder="Teléfono" required>
+                <input type="text" name="name" placeholder="Nombre del cliente" required>
+                <input type="email" name="email" placeholder="Email" required>
                 <input type="number" step="0.01" name="monto" placeholder="Monto pagado" required>
 
                 <select name="plan" required>
@@ -155,14 +160,13 @@
         </form>
     </div>
 
-    <!-- TABLA -->
     <div class="table-card">
         <h2>Clientes Registrados</h2>
 
         <table>
             <tr>
                 <th>Nombre</th>
-                <th>Teléfono</th>
+                <th>Email</th>
                 <th>Monto</th>
                 <th>Plan</th>
                 <th>Vence</th>
@@ -172,12 +176,12 @@
             {% for c in clientes %}
             <tr>
                 <td>{{ c.nombre }}</td>
-                <td>{{ c.telefono }}</td>
+                <td>{{ c.email }}</td>
                 <td>${{ "%.2f"|format(c.monto) }}</td>
                 <td>{{ '1 Día' if c.plan_dias == 1 else 'Mensual' }}</td>
                 <td>{{ c.vencimiento }}</td>
-                <td class="{{ 'expired' if c.vencimiento < hoy|string else 'active' }}">
-                    {{ 'VENCIDO ⚠️' if c.vencimiento < hoy|string else 'ACTIVO ✔️' }}
+                <td class="{{ 'expired' if c.vencimiento < hoy else 'active' }}">
+                    {{ 'VENCIDO ⚠️' if c.vencimiento < hoy else 'ACTIVO ✔️' }}
                 </td>
             </tr>
             {% endfor %}
