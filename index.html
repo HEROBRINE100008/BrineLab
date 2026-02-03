@@ -11,140 +11,138 @@
 
 <style>
 :root {
-    --bg: #050505;
-    --panel: #0f0f0f;
-    --accent: #c90000;
-    --text: #e0e0e0;
+    --bg:#050505;
+    --panel:#0f0f0f;
+    --accent:#c90000;
+    --text:#e0e0e0;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+*{box-sizing:border-box;margin:0;padding:0}
 
-body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: Montserrat, sans-serif;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:Montserrat,sans-serif;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
 }
 
-/* ================= HEADER ================= */
-header {
-    height: 60px;
-    background: black;
-    border-bottom: 2px solid var(--accent);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
+/* HEADER */
+header{
+    height:60px;
+    background:black;
+    border-bottom:2px solid var(--accent);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
 }
 
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
-.brand img {
-    height: 42px;
-    width: auto;
-    image-rendering: crisp-edges;
+.brand img{
+    height:42px;
 }
 
-.brand span {
-    color: var(--accent);
-    font-weight: bold;
-    letter-spacing: 1px;
+.brand span{
+    color:var(--accent);
+    font-weight:bold;
+    letter-spacing:1px;
 }
 
-/* ================= LAYOUT ================= */
-.main {
-    flex: 1;
-    display: flex;
+/* LAYOUT */
+.main{flex:1;display:flex}
+
+/* SIDEBAR */
+.sidebar{
+    width:260px;
+    background:#0a0a0a;
+    border-right:1px solid #333;
+    overflow-y:auto;
 }
 
-/* ================= SIDEBAR ================= */
-.sidebar {
-    width: 260px;
-    background: #0a0a0a;
-    border-right: 1px solid #333;
-    overflow-y: auto;
+.item{
+    padding:10px;
+    cursor:pointer;
+    display:flex;
+    gap:10px;
+    align-items:center;
 }
 
-.item {
-    padding: 10px;
-    cursor: pointer;
-    display: flex;
-    gap: 10px;
+.item:hover{
+    background:rgba(201,0,0,.1);
+    color:var(--accent);
 }
 
-.item:hover {
-    background: rgba(201,0,0,0.1);
-    color: var(--accent);
+.item.back{
+    color:#888;
+    font-style:italic;
 }
 
-/* ================= WORKSPACE ================= */
-.workspace {
-    flex: 1;
-    display: flex;
+/* WORKSPACE */
+.workspace{flex:1;display:flex}
+
+/* EDITOR */
+.editor{
+    flex:6;
+    background:#111;
+    display:flex;
+    flex-direction:column;
 }
 
-/* ================= EDITOR ================= */
-.editor {
-    flex: 6;
-    background: #111;
-    display: flex;
-    flex-direction: column;
+.editor-header{
+    padding:10px;
+    background:#1a1a1a;
+    display:flex;
+    justify-content:space-between;
 }
 
-.editor-header {
-    padding: 10px;
-    background: #1a1a1a;
-    display: flex;
-    justify-content: space-between;
+button{
+    background:var(--accent);
+    border:none;
+    padding:5px 15px;
+    color:white;
+    cursor:pointer;
+    font-family:'Fira Code';
 }
 
-button {
-    background: var(--accent);
-    border: none;
-    padding: 5px 15px;
-    color: white;
-    cursor: pointer;
-    font-family: 'Fira Code';
+pre{
+    margin:0;
+    padding:20px;
+    overflow:auto;
+    height:100%;
 }
 
-pre {
-    margin: 0;
-    padding: 20px;
-    overflow: auto;
-    height: 100%;
+/* TERMINAL */
+.terminal{
+    flex:4;
+    background:black;
+    display:flex;
+    flex-direction:column;
+    border-left:1px solid #333;
 }
 
-/* ================= TERMINAL ================= */
-.terminal {
-    flex: 4;
-    background: black;
-    display: flex;
-    flex-direction: column;
-    border-left: 1px solid #333;
+.terminal-body{
+    flex:1;
+    padding:10px;
+    font-family:'Fira Code';
+    color:#0f0;
+    overflow-y:auto;
 }
 
-.terminal-body {
-    flex: 1;
-    padding: 10px;
-    font-family: 'Fira Code';
-    color: #0f0;
-    overflow-y: auto;
-}
-
-.terminal input {
-    background: black;
-    border: none;
-    border-top: 1px solid #333;
-    padding: 10px;
-    color: #0f0;
-    outline: none;
-    font-family: 'Fira Code';
+.terminal input{
+    background:black;
+    border:none;
+    border-top:1px solid #333;
+    padding:10px;
+    color:#0f0;
+    outline:none;
+    font-family:'Fira Code';
 }
 </style>
 </head>
@@ -153,8 +151,7 @@ pre {
 
 <header>
     <div class="brand">
-        <!-- 🔥 LOGO RESTAURADO -->
-        <img src="logo-h.png" alt="Herobrine Logo">
+        <img src="logo-h.png" alt="Logo">
         <span>HEROBRINE CODE VAULT</span>
     </div>
     <i class="fab fa-github"></i>
@@ -182,6 +179,7 @@ pre {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 
 <script>
+/* CONFIG */
 const GITHUB_USER = 'HEROBRINE100008';
 const GITHUB_REPO = 'BrineLab';
 const BRANCH = 'main';
@@ -194,20 +192,36 @@ const filenameEl = document.getElementById('filename');
 const terminal = document.getElementById('terminal');
 const input = document.getElementById('cmd');
 
+let currentPath = '';
 let currentCode = '';
 let currentLang = '';
 
-function log(text) {
+function log(text){
     terminal.innerHTML += text + '<br>';
     terminal.scrollTop = terminal.scrollHeight;
 }
 
-async function load(path = '') {
+/* CARGAR CONTENIDO */
+async function load(path = ''){
+    currentPath = path;
     const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${path}?ref=${BRANCH}`;
     const res = await fetch(url);
     const data = await res.json();
 
     tree.innerHTML = '';
+
+    /* 🔙 BOTÓN .. */
+    if (path !== '') {
+        const back = document.createElement('div');
+        back.className = 'item back';
+        back.innerHTML = '<i class="fas fa-folder-open"></i> ..';
+        back.onclick = () => {
+            const parent = path.split('/').slice(0, -1).join('/');
+            load(parent);
+        };
+        tree.appendChild(back);
+    }
+
     data.forEach(item => {
         const div = document.createElement('div');
         div.className = 'item';
@@ -217,7 +231,8 @@ async function load(path = '') {
     });
 }
 
-async function openFile(file) {
+/* ABRIR ARCHIVO */
+async function openFile(file){
     const ext = file.name.split('.').pop().toLowerCase();
     filenameEl.textContent = file.name;
 
@@ -226,9 +241,8 @@ async function openFile(file) {
         codeEl.textContent =
 `⚠ ARCHIVO BINARIO
 
-Este archivo no puede mostrarse como texto.
+No puede mostrarse como texto.
 Descárgalo para abrirlo correctamente.`;
-
         Prism.highlightElement(codeEl);
         log('Archivo binario bloqueado: ' + file.name);
         return;
@@ -245,28 +259,29 @@ Descárgalo para abrirlo correctamente.`;
     log('Archivo cargado: ' + file.name);
 }
 
-function runCode() {
+/* EJECUTAR */
+function runCode(){
     if (currentLang === 'js') sandboxJS(currentCode);
     else log('Simulación: ' + currentLang.toUpperCase() + ' (requiere backend)');
 }
 
-function sandboxJS(code) {
+/* SANDBOX */
+function sandboxJS(code){
     const iframe = document.createElement('iframe');
     iframe.style.display = 'none';
     iframe.sandbox = 'allow-scripts';
     document.body.appendChild(iframe);
 
-    iframe.contentWindow.console.log = (...args) => {
-        args.forEach(a => log(a));
-    };
+    iframe.contentWindow.console.log = (...args) => args.forEach(a => log(a));
 
     try {
         iframe.contentWindow.eval(code);
-    } catch (e) {
+    } catch(e) {
         log('Error: ' + e.message);
     }
 }
 
+/* TERMINAL */
 input.addEventListener('keydown', e => {
     if (e.key === 'Enter') {
         const cmd = input.value;
@@ -276,7 +291,7 @@ input.addEventListener('keydown', e => {
         if (cmd === 'help') log('Comandos: help, run, clear, ls');
         else if (cmd === 'run') runCode();
         else if (cmd === 'clear') terminal.innerHTML = '';
-        else if (cmd === 'ls') log(filenameEl.textContent || 'sin archivo');
+        else if (cmd === 'ls') log(currentPath || '/');
         else log('Comando no reconocido');
     }
 });
