@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body style="font-family: Arial; background:#f5f7fa; padding:20px;">
+    <div style="max-width:600px; background:white; padding:20px; border-radius:10px;">
+        <h2 style="color:#0a2540;">GYM Manager</h2>
+
+        <p>Hola <strong>{{ nombre }}</strong>,</p>
+
+        <p>Gracias por tu pago. Aquí está tu factura:</p>
+
+        <ul>
+            <li><strong>Monto:</strong> ${{ monto }}</li>
+            <li><strong>Fecha:</strong> {{ fecha }}</li>
+        </ul>
+
+        <p>¡Te esperamos en el gimnasio 💪!</p>
+
+        <hr>
+        <small>Este correo fue generado automáticamente.</small>
+    </div>
+</body>
+</html>
