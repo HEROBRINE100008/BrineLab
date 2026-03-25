@@ -1,40 +1,46 @@
+Clasificacion de Conjuntos
 
-**Tema de la exposición:**  
-**“Reglamentaciones y Procesos Académicos en la Universidad UNICARIBE”**
+- Finitos 
+Ej: 
+Lv = {x|x las vocales}
+Lv = {a,e,i,o,u}
 
-**Resumen de lo que se expuso:**
+- Infinito
+Ej:
+N = {1,2,3,4...}
+- Vacio (∅), {∅}, ∅
 
-1. **Reglamentos Institucionales:**  
-   - Se habló de los tres reglamentos principales:  
-     - *Reglamento General y Académico*: organiza el año académico y la estructura de las carreras.  
-     - *Reglamento Docente*: define las funciones y evaluación de los profesores.  
-     - *Reglamento Estudiantil*: establece derechos, deberes y normas de conducta de los estudiantes.
+- Unitario
+Ej:
+A = {2}
 
-2. **Selección de Asignaturas:**  
-   - Explicaron que se realiza en línea mediante la plataforma **CONECTA**.  
-   - Mencionaron los **prerrequisitos** y cómo afectan la elección de materias.  
-   - Detallaron cómo **añadir, modificar o retirar** asignaturas, con fechas límite (ej.: retiro hasta el segundo encuentro).  
-   - También hablaron de la **solicitud de una 5ta asignatura** y de **asignaturas por tutoría**, esta última para casos especiales con autorización del director de carrera.
+- Universal
 
-3. **Calificaciones:**  
-   - Se explicó que la escala es de 100 puntos y se necesita 70 para aprobar.  
-   - Se describieron los procesos para **revisión de calificaciones** (48 horas después de publicada) y **evaluación diferida** (hasta 21 días después, con justificación).
+- Equivalentes (Comparar)
+A = {a,b,c,d,e}
+B = {1,2,3,4,5}
 
-4. **Trámites Administrativos:**  
-   - **Cambio de carrera**: Requisitos como no tener deudas y estar matriculado.  
-   - **Cambio de pensum**: Solo posible si se ha cursado menos del 50% de los créditos.  
-   - **Reingreso**: Se solicita por CONECTA, completando un formulario.
+- Disyuntivos
+A = {1,2,3}
+B = {a,b,c,d}
 
-5. **Proceso de Graduación:**  
-   - Se mencionaron los requisitos para:  
-     - **Revisión de grado** (previo a la inscripción del trabajo de grado).  
-     - **Trabajo de grado** (haber aprobado el seminario y tener revisión de grado aprobada).  
-     - **Graduación** (completar pensum, no tener sanciones, estar al día con pagos y documentos).
+- Iguales
+A = {1,2,3,4}
+B = {4,3,2,1}
+C = {2,3,4,1}
 
----
+- Congruentes (Numericos)
+A = {2,4,6,8}
+B = {3,5,7,9}
+C = {20,22,24,26}
 
-**Aportes o aspectos destacables que se pudieron mencionar:**  
-- El uso de **CONECTA** es central para casi todos los procesos académicos.  
-- Hay un límite de **5 asignaturas por cuatrimestre**, excepto en el último si quedan pendientes.  
-- Es importante estar al tanto del **calendario académico** para no perder fechas clave.  
-- La **Revisión de Grado** es un trámite previo y obligatorio para inscribir el trabajo de grado.
+- No Congruentes
+A = {3,5,9}
+B = {4,5,6}
+
+- Homogéneo
+A = {1,2,3,4,5}
+B = {6,7,8,9,10}
+
+- Heterogéneas
+C = {moneda,$,carro,naranja}
