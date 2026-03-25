@@ -1,5 +1,3 @@
-package mouredev;
-
 public class BeginnerExercises {
 
     public static void main(String[] args) {
