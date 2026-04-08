@@ -4,12 +4,15 @@ def add_Stu():
 	con = sqlite3.connect("Sql.db")
 	cur = con.cursor()
 	
-	into = ("INSERT INTO Notas (Students, Grades) VALUES (?, ?)")
+	into = ("INSERT INTO Notas (Students, P1, P2, P3, P4) VALUES (?, ?, ?, ?, ?)")
 	
 	stu = input("Nombre del estudiante: ")
-	sco = input("Nota: ")
-	
-	cur.execute(into, (stu, sco))
+	P1 = input("Nota del P1: ")
+	P2 = input("Nota del P2: ")
+	P3 = input("Nota del P3: ")
+	P4 = input("Nota del P4: ")
+ 
+	cur.execute(into, (stu, P1, P2, P3, P4))
 	
 	con.commit()
 	con.close()
