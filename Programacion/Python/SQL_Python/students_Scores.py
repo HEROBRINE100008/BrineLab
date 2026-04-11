@@ -1,6 +1,8 @@
 import sqlite3
 from show import show_Grades
 from add import add_Stu
+from approval import appr
+
 def init_db():
 	con = sqlite3.connect("Sql.db")
 	cur = con.cursor()
@@ -26,7 +28,8 @@ def menu():
 		print("\n-----Notas De Los Estudiantes-----")
 		print("1. Ingresar Estudiante")
 		print("2. Ver Notas Guardadas")
-		print("3. Salir")
+		print("3. Resultados")
+		print("4. Salir")
 
 		option = input("Elige una opción: ")
 		
@@ -34,9 +37,10 @@ def menu():
 			case '1':
 				add_Stu()
 			case '2':
-				print("Opcion no implementada :(")
 				show_Grades()
 			case '3':
+				appr()
+			case '4':
 				break
 			case _:
 				print("\nError: Opcion no valida")
