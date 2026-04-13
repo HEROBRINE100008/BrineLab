@@ -1,0 +1,15 @@
+/workspaces/BrineLab/Programacion/C#/SQL_C#/obj/Debug/net10.0/SQL_C#.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/BrineLab/Programacion/C#/SQL_C#/obj/Debug/net10.0/SQL_C#.AssemblyInfoInputs.cache
+/workspaces/BrineLab/Programacion/C#/SQL_C#/obj/Debug/net10.0/SQL_C#.AssemblyInfo.cs
+/workspaces/BrineLab/Programacion/C#/SQL_C#/obj/Debug/net10.0/SQL_C#.csproj.CoreCompileInputs.cache
+/workspaces/BrineLab/Programacion/C#/SQL_C#/obj/Debug/net10.0/SQL_C#.sourcelink.json
+/workspaces/BrineLab/Programacion/C#/SQL_C#/bin/Debug/net10.0/SQL_C#
+/workspaces/BrineLab/Programacion/C#/SQL_C#/bin/Debug/net10.0/SQL_C#.deps.json
+/workspaces/BrineLab/Programacion/C#/SQL_C#/bin/Debug/net10.0/SQL_C#.runtimeconfig.json
+/workspaces/BrineLab/Programacion/C#/SQL_C#/bin/Debug/net10.0/SQL_C#.dll
+/workspaces/BrineLab/Programacion/C#/SQL_C#/bin/Debug/net10.0/SQL_C#.pdb
+/workspaces/BrineLab/Programacion/C#/SQL_C#/obj/Debug/net10.0/SQL_C#.dll
+/workspaces/BrineLab/Programacion/C#/SQL_C#/obj/Debug/net10.0/refint/SQL_C#.dll
+/workspaces/BrineLab/Programacion/C#/SQL_C#/obj/Debug/net10.0/SQL_C#.pdb
+/workspaces/BrineLab/Programacion/C#/SQL_C#/obj/Debug/net10.0/SQL_C#.genruntimeconfig.cache
+/workspaces/BrineLab/Programacion/C#/SQL_C#/obj/Debug/net10.0/ref/SQL_C#.dll

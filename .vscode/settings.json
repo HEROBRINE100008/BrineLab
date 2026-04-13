@@ -1,3 +1,4 @@
 {
-    "livePreview.defaultPreviewPath": "/Programacion/Html/FreeCodeCamp/Build_a_Recipe_Page/index.html"
+    "livePreview.defaultPreviewPath": "/Programacion/Html/FreeCodeCamp/Build_a_Recipe_Page/index.html",
+    "remote.autoForwardPortsFallback": 0
 }
