@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/herobrine/Documents/BrineLab/Programacion/C#/Test/Test.csproj",
-      "projectName": "Test",
-      "projectPath": "/home/herobrine/Documents/BrineLab/Programacion/C#/Test/Test.csproj",
+      "projectUniqueName": "/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_Simple/Calculadora_Simple.csproj",
+      "projectName": "Calculadora_Simple",
+      "projectPath": "/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_Simple/Calculadora_Simple.csproj",
       "packagesPath": "/home/herobrine/.nuget/packages/",
-      "outputPath": "/home/herobrine/Documents/BrineLab/Programacion/C#/Test/obj/",
+      "outputPath": "/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_Simple/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/herobrine/.nuget/NuGet/NuGet.Config"

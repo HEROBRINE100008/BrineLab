@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="base_library">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Programacion/Python/Gym_v1/build/app/base_library.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

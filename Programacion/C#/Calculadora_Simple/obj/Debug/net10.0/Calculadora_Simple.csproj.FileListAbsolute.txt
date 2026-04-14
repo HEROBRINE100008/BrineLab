@@ -1,0 +1,15 @@
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_Simple/obj/Debug/net10.0/Calculadora_Simple.GeneratedMSBuildEditorConfig.editorconfig
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_Simple/obj/Debug/net10.0/Calculadora_Simple.AssemblyInfoInputs.cache
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_Simple/obj/Debug/net10.0/Calculadora_Simple.AssemblyInfo.cs
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_Simple/obj/Debug/net10.0/Calculadora_Simple.csproj.CoreCompileInputs.cache
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_Simple/obj/Debug/net10.0/Calculadora_Simple.sourcelink.json
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_Simple/bin/Debug/net10.0/Calculadora_Simple
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_Simple/bin/Debug/net10.0/Calculadora_Simple.deps.json
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_Simple/bin/Debug/net10.0/Calculadora_Simple.runtimeconfig.json
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_Simple/bin/Debug/net10.0/Calculadora_Simple.dll
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_Simple/bin/Debug/net10.0/Calculadora_Simple.pdb
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_Simple/obj/Debug/net10.0/Calculadora_Simple.dll
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_Simple/obj/Debug/net10.0/refint/Calculadora_Simple.dll
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_Simple/obj/Debug/net10.0/Calculadora_Simple.pdb
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_Simple/obj/Debug/net10.0/Calculadora_Simple.genruntimeconfig.cache
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_Simple/obj/Debug/net10.0/ref/Calculadora_Simple.dll
