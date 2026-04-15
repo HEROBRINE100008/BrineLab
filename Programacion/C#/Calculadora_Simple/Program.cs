@@ -4,12 +4,30 @@ namespace Calculadora_Simple
 {
     class Program
     {
+        public static int Input(string num)
+        {
+            Console.WriteLine($"Introduce el {num} número: ");
+            while (true)
+            {
+                if (double.TryParse(Console.ReadLine(), out double numero))
+                {
+                    return numero;
+                }
+                else
+                {
+                    Console.WriteLine("Entrada no valida");
+                    Console.WriteLine($"Introduce el {num} número: ");
+                }
+            }
+        }
         static void Main(string[] args)
         {
             bool continuar = true;
 
             do
             {
+                Calculadora simCal = new Calculadora();
+
                 Console.WriteLine("===== Calculadora =====");
                 Console.WriteLine("1. Suma");
                 Console.WriteLine("2. Resta");
@@ -23,16 +41,32 @@ namespace Calculadora_Simple
                 switch (tecla.Key)
                 {
                     case ConsoleKey.D1:
-                        Console.WriteLine("Sumas");
+                        simCal.Numero_1 = Input("primer");
+                        simCal.Numero_2 = Input("segundo");
+                        Console.WriteLine($"Resultado: {simCal.Suma()}");
+                        Console.WriteLine("Presione una tecla para continuar...");
+                        Console.ReadKey(true);
                         break;
                     case ConsoleKey.D2:
-                        Console.WriteLine("Restas");
+                        simCal.Numero_1 = Input("primer");
+                        simCal.Numero_2 = Input("segundo");
+                        Console.WriteLine($"Resultado: {simCal.Resta()}");
+                        Console.WriteLine("Presione una tecla para continuar...");
+                        Console.ReadKey(true);
                         break;
                     case ConsoleKey.D3:
-                        Console.WriteLine("Multiplicaciónes");
+                        simCal.Numero_1 = Input("primer");
+                        simCal.Numero_2 = Input("segundo");
+                        Console.WriteLine($"Resultado: {simCal.Multi()}");
+                        Console.WriteLine("Presione una tecla para continuar...");
+                        Console.ReadKey(true);
                         break;
                     case ConsoleKey.D4:
-                        Console.WriteLine("Divisiones");
+                        simCal.Numero_1 = Input("primer");
+                        simCal.Numero_2 = Input("segundo");
+                        Console.WriteLine($"Resultado: {simCal.Division()}");
+                        Console.WriteLine("Presione una tecla para continuar...");
+                        Console.ReadKey(true);
                         break;
                     case ConsoleKey.D5:
                         continuar = false;

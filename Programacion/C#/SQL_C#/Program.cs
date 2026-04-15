@@ -1,4 +1,4 @@
-﻿int Ca(){
+﻿int entrada(){
     Console.WriteLine("Introduce un número: ");
     while(true){
         if (int.TryParse(Console.ReadLine(), out int numero)) {
