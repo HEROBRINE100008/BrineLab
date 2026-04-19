@@ -4,7 +4,7 @@ namespace Calculadora_Simple
 {
     class Program
     {
-        public static int Input(string num)
+        public static double Input(string num)
         {
             Console.WriteLine($"Introduce el {num} número: ");
             while (true)
@@ -64,7 +64,14 @@ namespace Calculadora_Simple
                     case ConsoleKey.D4:
                         simCal.Numero_1 = Input("primer");
                         simCal.Numero_2 = Input("segundo");
-                        Console.WriteLine($"Resultado: {simCal.Division()}");
+                        try 
+                        {
+                            Console.WriteLine($"Resultado: {simCal.Division()}");
+                        }
+                        catch (DivideByZeroException ex)
+                        {
+                            Console.WriteLine($"Error: {ex.Message}");
+                        }
                         Console.WriteLine("Presione una tecla para continuar...");
                         Console.ReadKey(true);
                         break;

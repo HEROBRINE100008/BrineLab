@@ -1,0 +1,15 @@
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_de_Watts/bin/Debug/net10.0/Calculadora_de_Watts
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_de_Watts/bin/Debug/net10.0/Calculadora_de_Watts.deps.json
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_de_Watts/bin/Debug/net10.0/Calculadora_de_Watts.runtimeconfig.json
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_de_Watts/bin/Debug/net10.0/Calculadora_de_Watts.dll
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_de_Watts/bin/Debug/net10.0/Calculadora_de_Watts.pdb
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_de_Watts/obj/Debug/net10.0/Calculadora_de_Watts.GeneratedMSBuildEditorConfig.editorconfig
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_de_Watts/obj/Debug/net10.0/Calculadora_de_Watts.AssemblyInfoInputs.cache
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_de_Watts/obj/Debug/net10.0/Calculadora_de_Watts.AssemblyInfo.cs
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_de_Watts/obj/Debug/net10.0/Calculadora_de_Watts.csproj.CoreCompileInputs.cache
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_de_Watts/obj/Debug/net10.0/Calculadora_de_Watts.sourcelink.json
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_de_Watts/obj/Debug/net10.0/Calculadora_de_Watts.dll
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_de_Watts/obj/Debug/net10.0/refint/Calculadora_de_Watts.dll
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_de_Watts/obj/Debug/net10.0/Calculadora_de_Watts.pdb
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_de_Watts/obj/Debug/net10.0/Calculadora_de_Watts.genruntimeconfig.cache
+/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_de_Watts/obj/Debug/net10.0/ref/Calculadora_de_Watts.dll

@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Calculadora_Simple")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Calculadora_de_Watts")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef978d4bd0b95813d22197420cb88788ce0084d1")]
-[assembly: System.Reflection.AssemblyProductAttribute("Calculadora_Simple")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Calculadora_Simple")]
+[assembly: System.Reflection.AssemblyProductAttribute("Calculadora_de_Watts")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Calculadora_de_Watts")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.

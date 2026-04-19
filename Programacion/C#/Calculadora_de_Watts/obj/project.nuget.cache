@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "DQInW7G0Zg4=",
+  "success": true,
+  "projectFilePath": "/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_de_Watts/Calculadora_de_Watts.csproj",
+  "expectedPackageFiles": [
+    "/home/herobrine/.nuget/packages/microsoft.aspnetcore.app.ref/10.0.4/microsoft.aspnetcore.app.ref.10.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}
