@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "w8OA7ZKwNFI=",
+  "success": true,
+  "projectFilePath": "/home/herobrine/Documents/BrineLab/Programacion/C#/Complements_For_Simulation/Complements_For_Simulation.csproj",
+  "expectedPackageFiles": [
+    "/home/herobrine/.nuget/packages/microsoft.aspnetcore.app.ref/10.0.4/microsoft.aspnetcore.app.ref.10.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}
