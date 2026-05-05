@@ -1,0 +1,3 @@
+carac = '@'
+
+print(ord(carac))
