@@ -15,12 +15,12 @@ def data():
         Train("DH4", 77.5, 0.0, 500.0, False),
         Train("S282", 124.8, 50.0, 800.0, True),
         Train("DE6", 125.0, 0.0, 1000.0, False)
-        ]
-    if __name__ == "__main__":
-        print("Nombre\tPeso")
-        for c in Catalog:
-            print(f"{c.name}\t{c.weight}")
+    ]
+    return Catalog
 
 
 if __name__ == "__main__":
-    data()
+    catalog = data()
+    print("Nombre\tPeso")
+    for c in catalog:
+        print(f"{c.name}\t{c.weight}")
