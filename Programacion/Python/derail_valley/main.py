@@ -18,7 +18,11 @@ def menu():
 
         option = int(input("Elija un numero: "))
         trainFound = srchCatalog(option, catalog)
-        print(f"La Locomotora es la: {trainFound.name}")
+
+        if trainFound is not None:
+            print(f"La Locomotora es la: {trainFound.name}")
+        else:
+            print("Error:Opción no valida")
 
 
 if __name__ == "__main__":
