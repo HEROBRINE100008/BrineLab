@@ -13,7 +13,7 @@ if __name__ == "__main__":
     trainID = 2
 
     trainFound = srchCatalog(trainID, catalog)
-    loadWeight = 200
+    loadWeight = float(input("Introduzca el peso de la carga: "))
 
     if trainFound is not None:
         trainFound.maxWeight -= loadWeight
@@ -22,7 +22,8 @@ if __name__ == "__main__":
             print("El peso está en rango de capacidad de carga")
             print(f"Restante: {trainFound.maxWeight}t")
         else:
-            print(f"capacidad de carga sobrepasado por {}")
+            print("capacidad de carga sobrepasado por ",
+                  f"{trainFound.maxWeight}t")
 
     else:
         print("Error:Objeto Nulo")
