@@ -20,6 +20,12 @@ def data():
     return Catalog
 
 
+def srchCatalog(trainId, trainList):
+    for t in trainList:
+        if t.ID == trainId:
+            return t
+
+
 if __name__ == "__main__":
     catalog = data()
     print("ID\tNombre\tPeso")

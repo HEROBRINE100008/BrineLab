@@ -1,10 +1,5 @@
 from train import data
-
-
-def srchCatalog(trainId, trainList):
-    for t in trainList:
-        if t.ID == trainId:
-            return t
+from calc import calcWeight
 
 
 def menu():
@@ -16,13 +11,13 @@ def menu():
             print(f"{i}. {c.name}")
             i += 1
 
+        print("7. Salir")
         option = int(input("Elija un numero: "))
-        trainFound = srchCatalog(option, catalog)
 
-        if trainFound is not None:
-            print(f"La Locomotora es la: {trainFound.name}")
+        if option <= 6:
+            calcWeight(option)
         else:
-            print("Error:Opción no valida")
+            break
 
 
 if __name__ == "__main__":
