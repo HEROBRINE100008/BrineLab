@@ -5,145 +5,287 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Herobrine Code Vault</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
 
 <style>
 :root {
-    --bg:#050505;
-    --panel:#0f0f0f;
-    --accent:#c90000;
-    --text:#e0e0e0;
+    --bg: #000000;          /* Negro absoluto dominante */
+    --bg-panel: #050505;    /* Negro ligeramente elevado para paneles */
+    --accent: #c90000;      /* Rojo de tu diseño original */
+    --accent-dim: #4a0000;  /* Rojo oscuro para bordes */
+    --text-main: #a0a0a0;   /* Texto grisáceo para no fatigar la vista */
+    --text-bright: #ffffff; /* Texto blanco puro para resaltar */
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-
-body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:Montserrat,sans-serif;
-    height:100vh;
-    display:flex;
-    flex-direction:column;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* HEADER */
-header{
-    height:60px;
-    background:black;
-    border-bottom:2px solid var(--accent);
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 20px;
+body {
+    background: var(--bg);
+    color: var(--text-main);
+    font-family: 'Fira Code', monospace;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-transform: lowercase; /* Fiel al estilo rastreador analítico */
 }
 
-.brand{
-    display:flex;
-    align-items:center;
-    gap:12px;
+/* EFECTO SCANLINE CRT (Estética Tracker/Bot) */
+body::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    z-index: 999;
+    background-size: 100% 3px, 3px 100%;
+    pointer-events: none;
 }
 
-.brand img{
-    height:42px;
+/* HEADER GOTICO & BRUTALISTA */
+header {
+    height: 60px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 10;
 }
 
-.brand span{
-    color:var(--accent);
-    font-weight:bold;
-    letter-spacing:1px;
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-/* LAYOUT */
-.main{flex:1;display:flex}
-
-/* SIDEBAR */
-.sidebar{
-    width:260px;
-    background:#0a0a0a;
-    border-right:1px solid #333;
-    overflow-y:auto;
+.brand img {
+    height: 40px;
+    filter: drop-shadow(0 0 5px rgba(201,0,0,0.5));
 }
 
-.item{
-    padding:10px;
-    cursor:pointer;
-    display:flex;
-    gap:10px;
-    align-items:center;
+.brand span {
+    color: var(--accent);
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-size: 2rem;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px #000;
 }
 
-.item:hover{
-    background:rgba(201,0,0,.1);
-    color:var(--accent);
+/* INDICADOR DE TRACKING */
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--accent);
+    border: 1px solid var(--accent-dim);
+    padding: 4px 10px;
 }
 
-.item.back{
-    color:#888;
-    font-style:italic;
+.blink {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: blinker 1.5s linear infinite;
+    box-shadow: 0 0 8px var(--accent);
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+/* LAYOUT PRINCIPAL */
+.main {
+    flex: 1;
+    display: flex;
+    height: calc(100vh - 60px - 25px);
+}
+
+/* SIDEBAR (Explorador) */
+.sidebar {
+    width: 260px;
+    background: var(--bg);
+    border-right: 1px solid var(--accent-dim);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    padding: 10px 15px;
+    background: var(--accent-dim);
+    color: var(--text-bright);
+    font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.item {
+    padding: 8px 15px;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 0.85rem;
+    border-left: 2px solid transparent;
+    transition: all 0.1s;
+}
+
+.item:hover {
+    background: rgba(201, 0, 0, 0.1);
+    color: var(--text-bright);
+    border-left: 2px solid var(--accent);
+}
+
+.item.back {
+    color: #666;
 }
 
 /* WORKSPACE */
-.workspace{flex:1;display:flex}
+.workspace {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
 
 /* EDITOR */
-.editor{
-    flex:6;
-    background:#111;
-    display:flex;
-    flex-direction:column;
+.editor {
+    flex: 6;
+    background: var(--bg-panel);
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--accent-dim);
 }
 
-.editor-header{
-    padding:10px;
-    background:#1a1a1a;
-    display:flex;
-    justify-content:space-between;
+.editor-header {
+    padding: 8px 15px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--accent-dim);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
 }
 
-button{
-    background:var(--accent);
-    border:none;
-    padding:5px 15px;
-    color:white;
-    cursor:pointer;
-    font-family:'Fira Code';
+.editor-header span {
+    color: var(--text-main);
 }
 
-pre{
-    margin:0;
-    padding:20px;
-    overflow:auto;
-    height:100%;
+.editor-actions button {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 4px 15px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
+    cursor: pointer;
+    text-transform: lowercase;
 }
 
-/* TERMINAL */
-.terminal{
-    flex:4;
-    background:black;
-    display:flex;
-    flex-direction:column;
-    border-left:1px solid #333;
+.editor-actions button:hover {
+    background: var(--accent);
+    color: var(--bg);
 }
 
-.terminal-body{
-    flex:1;
-    padding:10px;
-    font-family:'Fira Code';
-    color:#0f0;
-    overflow-y:auto;
+pre {
+    margin: 0;
+    padding: 20px;
+    overflow: auto;
+    height: 100%;
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
 
-.terminal input{
-    background:black;
-    border:none;
-    border-top:1px solid #333;
-    padding:10px;
-    color:#0f0;
-    outline:none;
-    font-family:'Fira Code';
+/* COLORES CUSTOM PARA EL CÓDIGO (Overrides de Prism) */
+code[class*="language-"], pre[class*="language-"] {
+    color: #ccc; text-shadow: none; font-family: 'Fira Code', monospace;
 }
+.token.comment { color: #555; }
+.token.keyword { color: var(--accent); font-weight: bold; }
+.token.string { color: #888; }
+.token.function { color: #fff; }
+.token.operator { color: var(--accent); }
+.token.number { color: #aaa; }
+
+/* TERMINAL INTEGRADA */
+.terminal {
+    flex: 4;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+}
+
+.terminal-header {
+    background: var(--accent-dim);
+    padding: 4px 15px;
+    font-size: 0.75rem;
+    color: var(--text-bright);
+}
+
+.terminal-body {
+    flex: 1;
+    padding: 10px 15px;
+    color: var(--text-main);
+    overflow-y: auto;
+    font-size: 0.85rem;
+}
+
+.terminal-input-line {
+    display: flex;
+    padding: 0 15px 15px 15px;
+    align-items: center;
+}
+
+.prompt {
+    color: var(--accent);
+    margin-right: 10px;
+    white-space: pre;
+    font-weight: bold;
+}
+
+.terminal input {
+    background: transparent;
+    border: none;
+    color: var(--text-bright);
+    outline: none;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+    flex: 1;
+    text-transform: lowercase;
+}
+
+/* FOOTER / STATUS BAR TIPO BOTTED.WTF */
+footer {
+    height: 25px;
+    background: var(--bg);
+    border-top: 1px solid var(--accent-dim);
+    color: var(--text-main);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 0.7rem;
+    z-index: 10;
+}
+
+/* Scrollbars minimalistas */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); border-left: 1px solid var(--accent-dim); }
+::-webkit-scrollbar-thumb { background: var(--accent-dim); }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 </style>
 </head>
 
@@ -151,40 +293,60 @@ pre{
 
 <header>
     <div class="brand">
-        <img src="logo-h.png" alt="Logo">
-        <span>HEROBRINE CODE VAULT</span>
+        <img src="logo-h.jpg" alt="Logo">
+        <span>Herobrine</span>
     </div>
-    <i class="fab fa-github"></i>
+    <div class="status-indicator">
+        <div class="blink"></div>
+        system tracking online
+    </div>
 </header>
 
 <div class="main">
-    <div class="sidebar" id="tree"></div>
+    <div class="sidebar">
+        <div class="sidebar-header">./vault_explorer</div>
+        <div id="tree"></div>
+    </div>
 
     <div class="workspace">
         <div class="editor">
             <div class="editor-header">
-                <span id="filename">Selecciona un archivo</span>
-                <button onclick="runCode()">▶ RUN</button>
+                <span id="filename">[ no_file_selected ]</span>
+                <div class="editor-actions">
+                    <button onclick="runCode()">>_ run</button>
+                </div>
             </div>
-            <pre><code id="code" class="language-none">// Esperando archivo…</code></pre>
+            <pre><code id="code" class="language-none">/*
+ * SISTEMA CENTRAL EN ESPERA.
+ * SELECCIONE UN ARCHIVO DEL DIRECTORIO.
+ */</code></pre>
         </div>
 
         <div class="terminal">
+            <div class="terminal-header">tty1 - system terminal</div>
             <div class="terminal-body" id="terminal"></div>
-            <input id="cmd" placeholder="help | run | clear | ls">
+            <div class="terminal-input-line">
+                <span class="prompt">glitcherobrine@vault:~$</span>
+                <input id="cmd" autocomplete="off" autofocus spellcheck="false">
+            </div>
         </div>
     </div>
 </div>
 
+<footer>
+    <span>ENV: SECURE_VAULT // STATUS: ACTIVE</span>
+    <span>ENCRYPTION: AES-256 // CONNECTION: ESTABLISHED</span>
+</footer>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 
 <script>
-/* CONFIG */
+/* CONFIGURACIÓN REPOSITORIO */
 const GITHUB_USER = 'HEROBRINE100008';
 const GITHUB_REPO = 'BrineLab';
 const BRANCH = 'main';
 
-const BINARY_EXTENSIONS = ['db','sqlite','sqlite3','exe','bin','dll'];
+const BINARY_EXTENSIONS = ['db','sqlite','sqlite3','exe','bin','dll','class','jar'];
 
 const tree = document.getElementById('tree');
 const codeEl = document.getElementById('code');
@@ -196,107 +358,168 @@ let currentPath = '';
 let currentCode = '';
 let currentLang = '';
 
-function log(text){
-    terminal.innerHTML += text + '<br>';
+// Utilidad para imprimir en terminal
+function log(text, color = 'var(--text-main)') {
+    const p = document.createElement('div');
+    p.style.color = color;
+    p.innerHTML = text;
+    terminal.appendChild(p);
     terminal.scrollTop = terminal.scrollHeight;
 }
 
-/* CARGAR CONTENIDO */
+// Secuencia de arranque de la terminal
+function bootSequence() {
+    const bootLines = [
+        "booting system kernel...",
+        "mounting virtual workspaces...",
+        "establishing secure connection to github API...",
+        "access granted to repository: " + GITHUB_REPO,
+        "welcome to herobrine code vault. type 'help' for commands."
+    ];
+    
+    let delay = 0;
+    bootLines.forEach((line, index) => {
+        setTimeout(() => log(line, index === bootLines.length - 1 ? 'var(--accent)' : '#666'), delay);
+        delay += 250;
+    });
+}
+
+/* CARGAR DIRECTORIO DESDE GITHUB */
 async function load(path = ''){
     currentPath = path;
     const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${path}?ref=${BRANCH}`;
-    const res = await fetch(url);
-    const data = await res.json();
+    
+    try {
+        const res = await fetch(url);
+        if(!res.ok) throw new Error('límite de API alcanzado o repositorio no encontrado.');
+        const data = await res.json();
 
-    tree.innerHTML = '';
+        tree.innerHTML = '';
 
-    /* 🔙 BOTÓN .. */
-    if (path !== '') {
-        const back = document.createElement('div');
-        back.className = 'item back';
-        back.innerHTML = '<i class="fas fa-folder-open"></i> ..';
-        back.onclick = () => {
-            const parent = path.split('/').slice(0, -1).join('/');
-            load(parent);
-        };
-        tree.appendChild(back);
+        /* BOTÓN VOLVER */
+        if (path !== '') {
+            const back = document.createElement('div');
+            back.className = 'item back';
+            back.innerHTML = '<i class="fas fa-chevron-left"></i> [ .. ]';
+            back.onclick = () => {
+                const parent = path.split('/').slice(0, -1).join('/');
+                load(parent);
+            };
+            tree.appendChild(back);
+        }
+
+        data.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'item';
+            const icon = item.type === 'dir' ? 'fa-folder' : 'fa-file-code';
+            div.innerHTML = `<i class="fas ${icon}"></i> ${item.name}`;
+            div.onclick = () => item.type === 'dir' ? load(item.path) : openFile(item);
+            tree.appendChild(div);
+        });
+    } catch (e) {
+        log(`[error] ${e.message}`, 'var(--accent)');
+        tree.innerHTML = '<div class="item" style="color:var(--accent)">error de conexión</div>';
     }
-
-    data.forEach(item => {
-        const div = document.createElement('div');
-        div.className = 'item';
-        div.innerHTML = `<i class="fas fa-${item.type === 'dir' ? 'folder' : 'file-code'}"></i>${item.name}`;
-        div.onclick = () => item.type === 'dir' ? load(item.path) : openFile(item);
-        tree.appendChild(div);
-    });
 }
 
 /* ABRIR ARCHIVO */
 async function openFile(file){
     const ext = file.name.split('.').pop().toLowerCase();
-    filenameEl.textContent = file.name;
+    filenameEl.textContent = `[ ${file.name} ]`;
 
     if (BINARY_EXTENSIONS.includes(ext)) {
         codeEl.className = 'language-none';
-        codeEl.textContent =
-`⚠ ARCHIVO BINARIO
-
-No puede mostrarse como texto.
-Descárgalo para abrirlo correctamente.`;
+        codeEl.textContent = `[ ALERTA ]\n\nEl archivo binario '${file.name}' no puede ser mostrado como texto.\nRequiere descarga local.`;
         Prism.highlightElement(codeEl);
-        log('Archivo binario bloqueado: ' + file.name);
+        log(`[sistema] acceso denegado a binario: ${file.name}`, 'var(--accent)');
         return;
     }
 
-    const res = await fetch(file.download_url);
-    currentCode = await res.text();
-    currentLang = ext;
+    try {
+        log(`[red] leyendo ${file.name}...`, '#666');
+        const res = await fetch(file.download_url);
+        currentCode = await res.text();
+        currentLang = ext;
 
-    codeEl.className = ext === 'py' ? 'language-python' : 'language-javascript';
-    codeEl.textContent = currentCode;
-    Prism.highlightElement(codeEl);
+        // Auto-detección para PrismJS (puedes añadir más)
+        let prismLang = 'none';
+        if(['py'].includes(ext)) prismLang = 'python';
+        if(['js'].includes(ext)) prismLang = 'javascript';
+        if(['java'].includes(ext)) prismLang = 'java';
+        if(['cs'].includes(ext)) prismLang = 'csharp';
+        if(['c','cpp','h'].includes(ext)) prismLang = 'c';
+        
+        codeEl.className = `language-${prismLang}`;
+        codeEl.textContent = currentCode;
+        Prism.highlightElement(codeEl);
 
-    log('Archivo cargado: ' + file.name);
+        log(`[sistema] archivo cargado: ${file.name}`);
+    } catch(e) {
+        log(`[error] no se pudo leer el archivo de github.`, 'var(--accent)');
+    }
 }
 
 /* EJECUTAR */
 function runCode(){
-    if (currentLang === 'js') sandboxJS(currentCode);
-    else log('Simulación: ' + currentLang.toUpperCase() + ' (requiere backend)');
+    if (currentLang === 'js') {
+        log(`[sistema] ejecutando script en entorno local...`, 'var(--accent)');
+        sandboxJS(currentCode);
+    } else {
+        log(`[compilador] entorno no disponible para simulación de .${currentLang}.`);
+    }
 }
 
-/* SANDBOX */
+/* ENTORNO AISLADO PARA JS */
 function sandboxJS(code){
     const iframe = document.createElement('iframe');
     iframe.style.display = 'none';
     iframe.sandbox = 'allow-scripts';
     document.body.appendChild(iframe);
 
-    iframe.contentWindow.console.log = (...args) => args.forEach(a => log(a));
+    iframe.contentWindow.console.log = (...args) => args.forEach(a => log(`> ${a}`, '#fff'));
 
     try {
         iframe.contentWindow.eval(code);
     } catch(e) {
-        log('Error: ' + e.message);
+        log(`[excepción] ${e.message}`, 'var(--accent)');
     }
+    
+    setTimeout(() => iframe.remove(), 1000);
 }
 
-/* TERMINAL */
+/* EVENTOS DE TERMINAL */
 input.addEventListener('keydown', e => {
     if (e.key === 'Enter') {
-        const cmd = input.value;
+        const cmd = input.value.trim().toLowerCase();
         input.value = '';
-        log('> ' + cmd);
+        log(`<span style="color:var(--accent)">glitcherobrine@vault:~$</span> ${cmd}`);
 
-        if (cmd === 'help') log('Comandos: help, run, clear, ls');
-        else if (cmd === 'run') runCode();
-        else if (cmd === 'clear') terminal.innerHTML = '';
-        else if (cmd === 'ls') log(currentPath || '/');
-        else log('Comando no reconocido');
+        if (cmd === 'help') {
+            log('comandos: help, run, clear, ls');
+        } else if (cmd === 'run') {
+            runCode();
+        } else if (cmd === 'clear') {
+            terminal.innerHTML = '';
+        } else if (cmd === 'ls') {
+            log(`[ruta actual] ${currentPath || '/'}`);
+        } else if (cmd !== '') {
+            log(`comando no encontrado: ${cmd}`, 'var(--accent)');
+        }
+        
+        // Mantener el focus en el input siempre que se interactúe
+        setTimeout(() => input.focus(), 10);
     }
 });
 
-load();
+// Clicar en la terminal le devuelve el focus al input
+document.querySelector('.terminal').addEventListener('click', () => {
+    input.focus();
+});
+
+// Iniciar
+bootSequence();
+setTimeout(() => load(), 1200);
+
 </script>
 
 </body>
