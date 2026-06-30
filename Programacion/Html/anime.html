@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primera animación con Anime.js</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <style>
+        /* 2. ESTILOS (CSS): Ponemos el fondo oscuro y centramos todo */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #121212; /* Fondo oscuro */
+            overflow: hidden;
+        }
+
+        /* Diseñamos el objeto que vamos a animar */
+        .mi-elemento {
+            width: 70px;
+            height: 70px;
+            background-color: #ff3366; /* Color neón vibrante */
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mi-elemento"></div>
+
+    <script>
+        anime({
+            targets: '.mi-elemento',    // ¿A quién queremos animar? Usamos su clase (.mi-elemento)
+            translateX: 200,            // Se mueve 200 píxeles a la derecha
+            rotate: '1turn',            // Da una vuelta completa (360 grados)
+            backgroundColor: '#00adb5', // Cambia de color a un tono azul/turquesa
+            borderRadius: ['8px', '50%'], // Se transforma de cuadrado a círculo
+            duration: 2000,             // Tiempo que dura la animación (2000 milisegundos = 2 segundos)
+            direction: 'alternate',     // Al terminar, hace la animación al revés para volver al inicio
+            loop: true,                 // Se repite infinitamente
+            easing: 'easeInOutQuad'     // Suaviza el movimiento para que no sea brusco
+        });
+    </script>
+
+</body>
+</html>
