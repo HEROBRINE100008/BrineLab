@@ -1,7 +1,8 @@
 {
+    "version": "0.2.0",
     "configurations": [
-                {
-            "name": "(gdb) Iniciar",
+        {
+            "name": "Depurar archivo C++ activo",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
@@ -13,17 +14,16 @@
             "MIMode": "gdb",
             "setupCommands": [
                 {
-                    "description": "Habilitar la impresión con sangría para gdb",
+                    "description": "Habilitar la impresión organizada para gdb",
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
-                },
-                {
-                    "description": "Establecer tipo de desensamblado en Intel",
-                    "text": "-gdb-set disassembly-flavor intel",
-                    "ignoreFailures": true
                 }
-            ]
-        },
+            ],
+            "preLaunchTask": "Compilar C++",
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]
+}
 
         {
             "type": "chrome",
