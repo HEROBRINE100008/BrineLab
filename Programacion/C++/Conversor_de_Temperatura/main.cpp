@@ -23,7 +23,7 @@ int main()
 		
 		switch (option) {
 			case 1: {
-				char subOption{'0'};
+				int subOption{0};
 				cout << "Selecciona una opción:\n1. °F a °C\n2. °F a K\n";
 				cin >> subOption;
 				if (subOption == 1) {
@@ -43,5 +43,7 @@ int main()
 				break;
 		
 		}
+		cout << "Saliendo del programa...\n";
+		break;
 	}
 }
