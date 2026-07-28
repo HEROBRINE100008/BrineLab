@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "t6wPiu/cKeY=",
+  "dgSpecHash": "Cvlx10eKNac=",
   "success": true,
   "projectFilePath": "/home/herobrine/Documents/BrineLab/Programacion/C#/Calculadora_Simple/Calculadora_Simple.csproj",
   "expectedPackageFiles": [
-    "/home/herobrine/.nuget/packages/microsoft.aspnetcore.app.ref/10.0.4/microsoft.aspnetcore.app.ref.10.0.4.nupkg.sha512"
+    "/home/herobrine/.nuget/packages/microsoft.aspnetcore.app.ref/10.0.10/microsoft.aspnetcore.app.ref.10.0.10.nupkg.sha512"
   ],
   "logs": []
 }
