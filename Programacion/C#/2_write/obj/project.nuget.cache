@@ -1,13 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "QGVJlpCTmxI=",
+  "dgSpecHash": "xMB6lntClOg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ismae\\Documents\\BrineLab\\BrineLab\\Programacion\\C#\\Write\\Write.csproj",
+  "projectFilePath": "/home/herobrine/Documents/BrineLab/Programacion/C#/2_write/Write.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ismae\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.18\\microsoft.netcore.app.ref.8.0.18.nupkg.sha512",
-    "C:\\Users\\ismae\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.18\\microsoft.windowsdesktop.app.ref.8.0.18.nupkg.sha512",
-    "C:\\Users\\ismae\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.18\\microsoft.aspnetcore.app.ref.8.0.18.nupkg.sha512",
-    "C:\\Users\\ismae\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.18\\microsoft.netcore.app.host.win-x64.8.0.18.nupkg.sha512"
+    "/home/herobrine/.nuget/packages/microsoft.netcore.app.ref/8.0.29/microsoft.netcore.app.ref.8.0.29.nupkg.sha512",
+    "/home/herobrine/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.29/microsoft.aspnetcore.app.ref.8.0.29.nupkg.sha512",
+    "/home/herobrine/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.29/microsoft.netcore.app.host.linux-x64.8.0.29.nupkg.sha512"
   ],
   "logs": []
 }

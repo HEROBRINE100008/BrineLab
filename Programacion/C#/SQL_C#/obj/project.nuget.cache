@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "TTA7ZQe5gYo=",
+  "dgSpecHash": "cDUv3a/Ap1o=",
   "success": true,
-  "projectFilePath": "/workspaces/BrineLab/Programacion/C#/SQL_C#/SQL_C#.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/herobrine/Documents/BrineLab/Programacion/C#/SQL_C#/SQL_C#.csproj",
+  "expectedPackageFiles": [
+    "/home/herobrine/.nuget/packages/microsoft.aspnetcore.app.ref/10.0.10/microsoft.aspnetcore.app.ref.10.0.10.nupkg.sha512"
+  ],
   "logs": []
 }

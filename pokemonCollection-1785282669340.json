@@ -1,0 +1,34 @@
+[
+  {
+    "color": "default",
+    "type": "giratina_origin",
+    "size": "medium",
+    "name": "Giratina",
+    "generation": "gen4",
+    "originalSpriteSize": 64
+  },
+  {
+    "color": "default",
+    "type": "venusaur",
+    "size": "medium",
+    "name": "Venusaur",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "gengar",
+    "size": "medium",
+    "name": "Gengar",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "rayquaza",
+    "size": "medium",
+    "name": "Rayquaza",
+    "generation": "gen3",
+    "originalSpriteSize": 64
+  }
+]

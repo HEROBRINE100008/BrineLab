@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/workspaces/BrineLab/Programacion/C#/SQL_C#/SQL_C#.csproj": {}
+    "/home/herobrine/Documents/BrineLab/Programacion/C#/SQL_C#/SQL_C#.csproj": {}
   },
   "projects": {
-    "/workspaces/BrineLab/Programacion/C#/SQL_C#/SQL_C#.csproj": {
+    "/home/herobrine/Documents/BrineLab/Programacion/C#/SQL_C#/SQL_C#.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/BrineLab/Programacion/C#/SQL_C#/SQL_C#.csproj",
+        "projectUniqueName": "/home/herobrine/Documents/BrineLab/Programacion/C#/SQL_C#/SQL_C#.csproj",
         "projectName": "SQL_C#",
-        "projectPath": "/workspaces/BrineLab/Programacion/C#/SQL_C#/SQL_C#.csproj",
-        "packagesPath": "/home/codespace/.nuget/packages/",
-        "outputPath": "/workspaces/BrineLab/Programacion/C#/SQL_C#/obj/",
+        "projectPath": "/home/herobrine/Documents/BrineLab/Programacion/C#/SQL_C#/SQL_C#.csproj",
+        "packagesPath": "/home/herobrine/.nuget/packages/",
+        "outputPath": "/home/herobrine/Documents/BrineLab/Programacion/C#/SQL_C#/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/codespace/.nuget/NuGet/NuGet.Config"
+          "/home/herobrine/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -38,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net10.0": {
@@ -54,12 +54,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[10.0.10, 10.0.10]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.201/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.110/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

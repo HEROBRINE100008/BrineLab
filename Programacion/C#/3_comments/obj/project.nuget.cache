@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "9HrRLS/OOsk=",
+  "dgSpecHash": "pbg0MNoXubk=",
   "success": true,
-  "projectFilePath": "/workspaces/BrineLab/Programacion/C#/3_comments/3_comments.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/herobrine/Documents/BrineLab/Programacion/C#/3_comments/3_comments.csproj",
+  "expectedPackageFiles": [
+    "/home/herobrine/.nuget/packages/microsoft.netcore.app.ref/8.0.29/microsoft.netcore.app.ref.8.0.29.nupkg.sha512",
+    "/home/herobrine/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.29/microsoft.aspnetcore.app.ref.8.0.29.nupkg.sha512",
+    "/home/herobrine/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.29/microsoft.netcore.app.host.linux-x64.8.0.29.nupkg.sha512"
+  ],
   "logs": []
 }
