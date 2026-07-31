@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Calculadora</title>
+	</head>
+	<body>
+		<h1>Calculadora</h1>
+		<input type="number" id="nu1">
+		<input type="number" id="nu2">
+		<button id="boton">Enviar</button>
+
+		<p id="texto"></p>
+
+		<script>
+			function suma(a,b) {
+				return a + b;
+			}
+			const num1 = document.getElementById("nu1");
+			const num2 = document.getElementById("nu2");
+			const butt = document.getElementById("boton");
+			const text = document.getElementById("texto");
+
+			butt.addEventListener("click", function() {
+				text.textContent = num1 + num2;
+			});
+		</script>
+	</body>
+</html>
