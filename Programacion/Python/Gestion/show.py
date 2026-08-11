@@ -1,14 +1,7 @@
 import sqlite3
 
 
-def showTable():
-    con = sqlite3.connect("Sql.db")
-    cur = con.cursor()
-
-    cur.execute("SELECT * FROM productos")
-
-    info = cur.fetchall()
-
+def heading():
     lineas = "=" * 79
 
     print(lineas)
@@ -17,6 +10,19 @@ def showTable():
             f"{"PRECIO VENTA":<16}{"STOCK"}"
     )
     print(lineas)
+
+    return lineas
+
+
+def showTable():
+    con = sqlite3.connect("Sql.db")
+    cur = con.cursor()
+
+    cur.execute("SELECT * FROM productos")
+
+    info = cur.fetchall()
+
+    lineas = heading()
     for fila in info:
         print(
                 f"{fila[0]:<5}{fila[1]:<21}{fila[2]:<17}"

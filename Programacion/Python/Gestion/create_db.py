@@ -37,4 +37,3 @@ if __name__ == "__main__":
     init_db()
 
     print("base de datos creada con exito")
-

@@ -1,6 +1,7 @@
 from create_db import init_db
 import add
-import show
+from show import showTable
+import critic
 
 
 def menu():
@@ -24,7 +25,9 @@ def menu():
             case '1':
                 add.add_Product()
             case '2':
-                show.showTable()
+                showTable()
+            case '3':
+                critic.show()
             case '8':
                 break
 
