@@ -14,6 +14,14 @@ def heading():
     return lineas
 
 
+def showRows(row):
+    for fila in row:
+        print(
+                f"{fila[0]:<5}{fila[1]:<21}{fila[2]:<17}"
+                f"${fila[4]:<16,.2f}{fila[5]}"
+        )
+
+
 def showTable():
     con = sqlite3.connect("Sql.db")
     cur = con.cursor()
@@ -23,12 +31,7 @@ def showTable():
     info = cur.fetchall()
 
     lineas = heading()
-    for fila in info:
-        print(
-                f"{fila[0]:<5}{fila[1]:<21}{fila[2]:<17}"
-                f"${fila[4]:<16,.2f}{fila[5]}"
-        )
-
+    showRows(info)
     print(lineas)
 
     con.close()

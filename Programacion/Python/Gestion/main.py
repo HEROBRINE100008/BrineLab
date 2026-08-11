@@ -2,6 +2,7 @@ from create_db import init_db
 import add
 from show import showTable
 import critic
+from update import upd
 
 
 def menu():
@@ -28,6 +29,8 @@ def menu():
                 showTable()
             case '3':
                 critic.show()
+            case '4':
+                upd()
             case '8':
                 break
 

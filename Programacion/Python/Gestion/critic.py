@@ -1,5 +1,5 @@
 import sqlite3
-from show import heading
+from show import heading, showRows
 
 
 def show():
@@ -15,12 +15,10 @@ def show():
               "No hay productos con stock crítico en este momento.")
     else:
         lineas = heading()
-        for fila in info:
-            print(
-                    f"{fila[0]:<5}{fila[1]:<21}{fila[2]:<17}"
-                    f"${fila[4]:<16,.2f}{fila[5]}"
-            )
+        showRows(info)
         print(lineas)
+
+    con.close()
 
 
 if __name__ == "__main__":
