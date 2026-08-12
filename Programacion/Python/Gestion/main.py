@@ -3,6 +3,7 @@ import add
 from show import showTable
 import critic
 from update import upd
+from register import regis
 
 
 def menu():
@@ -31,6 +32,8 @@ def menu():
                 critic.show()
             case '4':
                 upd()
+            case '5':
+                regis()
             case '8':
                 break
 

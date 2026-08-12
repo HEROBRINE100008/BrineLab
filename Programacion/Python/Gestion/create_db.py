@@ -25,7 +25,7 @@ def init_db():
         "cantidad"  INTEGER,
         "precio_unitario"   INTEGER,
         "total" INTEGER,
-        "fecha_hora"    INTEGER,
+        "fecha_hora"    TEXT DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY("id" AUTOINCREMENT),
         FOREIGN KEY("producto_id") REFERENCES "productos"("id")
     )""")
