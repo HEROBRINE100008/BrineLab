@@ -1,6 +1,6 @@
 from create_db import init_db
 import add
-from show import showTable
+from show import showTable, showSales
 import critic
 from update import upd
 from register import regis
@@ -34,6 +34,8 @@ def menu():
                 upd()
             case '5':
                 regis()
+            case '6':
+                showSales()
             case '8':
                 break
 
