@@ -6,18 +6,26 @@ cur = con.cursor()
 
 cur.execute("""
             SELECT
-            v.id,
-            v.fecha_hora,
-            p.nombre,
-            v.cantidad,
-            v.precio_unitario,
-            v.total
+            COALESCE(SUM(v.total), 0) AS total_ingresos,
+            COALESCE(SUM(v.cantidad * p.precio_costo), 0) AS costo_total,
+            COALESCE(SUM(v.total) - SUM(v.cantidad * p.precio_costo), 0) AS ganancia_neta
             FROM ventas AS v
-            INNER JOIN productos AS p
-            ON v.producto_id = p.id
+            JOIN productos AS p ON v.producto_id = p.id;
             """)
 
-info = cur.fetchall()
+ingresos, costo, ganancia = cur.fetchone()
 
-for row in info:
-    print(row)
+rows = "=" * 48
+row = "-" * 48
+
+print(f"""
+      {rows}
+      {'REPORTE FINANCIERO GENERAL':^48}
+      {rows}
+      {'Total Ventas Registradas:':<28}{'1':<20}
+      {'Total Ingresos:':<28}{ingresos:<20,.2f}
+      {'Costo de Inversión:':<28}{costo:<20,.2f}
+      {row}
+      {'GANANCIA NETA ESTIMADA:':<28}{ganancia:<20,.2f}
+      {rows}
+      """)

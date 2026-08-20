@@ -2,11 +2,11 @@ import sqlite3
 
 
 def heading():
-    lineas = "=" * 79
+    lineas = "=" * 98
 
     print(lineas)
     print(
-            f"{"ID":<5}{"NOMBRE":<21}{"CATEGORÍA":<17}"
+            f"{"ID":<5}{"NOMBRE":<40}{"CATEGORÍA":<17}"
             f"{"PRECIO VENTA":<16}{"STOCK"}"
     )
     print(lineas)
@@ -17,9 +17,44 @@ def heading():
 def showRows(row):
     for fila in row:
         print(
-                f"{fila[0]:<5}{fila[1]:<21}{fila[2]:<17}"
+                f"{fila[0]:<5}{fila[1]:<40}{fila[2]:<17}"
                 f"${fila[4]:<16,.2f}{fila[5]}"
         )
+
+
+def showEarnings():
+    con = sqlite3.connect("Sql.db")
+    cur = con.cursor()
+
+    cur.execute("""
+                SELECT
+                COUNT(*) AS ventas_registradas,
+                COALESCE(SUM(v.total), 0) AS total_ingresos,
+                COALESCE(SUM(v.cantidad * p.precio_costo), 0) AS costo_total,
+                COALESCE(SUM(v.total) - SUM(v.cantidad * p.precio_costo), 0)
+                AS ganancia_neta
+                FROM ventas AS v
+                JOIN productos AS p ON v.producto_id = p.id;
+                """)
+
+    ventas, ingresos, costo, ganancia = cur.fetchone()
+
+    rows = "=" * 48
+    row = "-" * 48
+
+    print(f"""
+          {rows}
+          {'REPORTE FINANCIERO GENERAL':^48}
+          {rows}
+          {'Total Ventas Registradas:':<28}{ventas:<20}
+          {'Total Ingresos:':<28}{ingresos:<20,.2f}
+          {'Costo de Inversión:':<28}{costo:<20,.2f}
+          {row}
+          {'GANANCIA NETA ESTIMADA:':<28}{ganancia:<20,.2f}
+          {rows}
+          """)
+
+    con.commit()
 
 
 def showSales():
@@ -41,22 +76,22 @@ def showSales():
 
     info = cur.fetchall()
 
-    lines = "=" * 84
+    lines = "=" * 95
 
     print(lines)
     print(
-        f"{'ID VENTA':<10}{'FECHA / HORA':<21}{'PRODUCTO':<19}"
+        f"{'ID VENTA':<10}{'FECHA / HORA':<21}{'PRODUCTO':<30}"
         f"{'CANT.':<7}{'PRECIO UNIT.':<14}{'TOTAL':<13}"
         )
     print(lines)
     for row in info:
         print(
-                f"{row[0]:<10}{row[1]:<21}{row[2]:<19}"
+                f"{row[0]:<10}{row[1]:<21}{row[2]:<30}"
                 f"{row[3]:<7}{row[4]:<14}{row[5]:<13}"
                 )
-        print(lines)
+    print(lines)
 
-        con.close()
+    con.close()
 
 
 def showTable():
