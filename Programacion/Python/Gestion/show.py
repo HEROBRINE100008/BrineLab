@@ -55,6 +55,7 @@ def showEarnings():
           """)
 
     con.commit()
+    con.close()
 
 
 def showSales():

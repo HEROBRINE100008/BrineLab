@@ -44,6 +44,11 @@ def regis():
 
             units = float(input("Cuantas unidades se venderán: "))
 
+            if units > stock:
+                print("Error: Stock insuficiente. "
+                      f"Solo quedan {stock} unidades disponibles.")
+                break
+
             total = price * units
 
             res = stock - units

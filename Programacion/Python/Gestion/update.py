@@ -3,10 +3,9 @@ from show import showTable, showRows, heading
 
 
 def getInfo(cur, ID):
-    cur.execute("SELECT * FROM productos WHERE id = ?", ID)
+    cur.execute("SELECT * FROM productos WHERE id = ?", (ID,))
 
-    info = cur.fetchall()
-    return info
+    return cur.fetchall()
 
 
 def upd():
@@ -32,7 +31,7 @@ def upd():
     for row in info:
         oldStock = row[5]
 
-    addStock = input("Ingrese Unidades a añadir: ")
+    addStock = int(input("Ingrese Unidades a añadir: "))
     cur.execute(update, (addStock, ID))
     con.commit()
 

@@ -13,9 +13,9 @@ def add_Product():
 
     name = input("Introduzca el nombre del producto: ")
     category = input("Introduzca la categoria: ")
-    priceCost = input("Introduzca costo del producto: ")
-    priceSell = input("Introduzca el precio de venta: ")
-    stock = input("Introduzca cuanto stock hay: ")
+    priceCost = float(input("Introduzca costo del producto: "))
+    priceSell = float(input("Introduzca el precio de venta: "))
+    stock = int(input("Introduzca cuanto stock hay: "))
 
     cur.execute(into, (name, category, priceCost, priceSell, stock))
 
