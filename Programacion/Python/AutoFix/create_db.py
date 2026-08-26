@@ -6,28 +6,23 @@ def init_db():
     cur = con.cursor()
 
     cur.execute("""
-    CREATE TABLE IF NOT EXISTS "productos" (
-        "id"    INTEGER NOT NULL UNIQUE,
-        "nombre"    TEXT NOT NULL,
-        "categoria" TEXT NOT NULL,
-        "precio_costo"  REAL NOT NULL,
-        "precio_venta"  REAL NOT NULL,
-        "stock" INTEGER NOT NULL,
-        "stock_minimo"  INTEGER DEFAULT 5,
-        PRIMARY KEY("id" AUTOINCREMENT)
+    CREATE TABLE IF NOT EXISTS "cliente" (
+    "ID" TEXT NOT NULL UNIQUE,
+    "nombre_completo" TEXT NOT NULL,
+    "telefono" TEXT NOT NULL,
+    "correo_electronico" TEXT NOT NULL,
+    PRIMARY KEY("ID")
     )""")
     con.commit()
 
     cur.execute("""
-    CREATE TABLE IF NOT EXISTS "ventas" (
-        "id"    INTEGER NOT NULL UNIQUE,
-        "producto_id"   INTEGER,
-        "cantidad"  INTEGER,
-        "precio_unitario"   INTEGER,
-        "total" INTEGER,
-        "fecha_hora"    TEXT DEFAULT CURRENT_TIMESTAMP,
-        PRIMARY KEY("id" AUTOINCREMENT),
-        FOREIGN KEY("producto_id") REFERENCES "productos"("id")
+    CREATE TABLE IF NOT EXISTS "vehiculos" (
+    "placa" TEXT NOT NULL UNIQUE,
+    "marca" TEXT NOT NULL,
+    "modelo" TEXT NOT NULL,
+    "año" INTEGER NOT NULL,
+    "id_cliente" TEXT NOT NULL,
+    FOREIGN KEY("id_cliente") REFERENCES "cliente"("ID")
     )""")
     con.commit()
     con.close()
