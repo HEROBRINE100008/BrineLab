@@ -1,5 +1,11 @@
+from create_db import init_db
+import add
+
 def menu():
+    init_db()
+
     row = "-" * 10
+
     while True:
         print(f"""
         {row}AutoFix{row}
@@ -15,7 +21,7 @@ def menu():
         match option:
 
             case 1:
-                
+                add.regCostumer()
             case 5:
                 break
 
